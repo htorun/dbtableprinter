@@ -34,6 +34,7 @@ package net.efabrika.util;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 /**
  * Just a utility to print rows from a given DB table or a
@@ -438,6 +439,10 @@ public class DBTablePrinter {
             // and the String representation of their values.
             List<Column> columns = new ArrayList<>(columnCount);
 
+            // List of table names. Can be more than one if it is a joined
+            // table query
+            List<String> tableNames = new ArrayList<>(columnCount);
+
             // Get the columns and their meta data.
             // NOTE: columnIndex for rsmd.getXXX methods STARTS AT 1 NOT 0
             for (int i = 1; i <= columnCount; i++) {
@@ -446,6 +451,10 @@ public class DBTablePrinter {
                 c.setWidth(c.getLabel().length());
                 c.setTypeCategory(whichCategory(c.getType()));
                 columns.add(c);
+
+                if (!tableNames.contains(rsmd.getTableName(i))) {
+                    tableNames.add(rsmd.getTableName(i));
+                }
             }
 
             // Go through each row, get values of each column and adjust
@@ -565,7 +574,12 @@ public class DBTablePrinter {
             strToPrint.insert(0, rowSeparator);
             strToPrint.append(rowSeparator);
 
-            System.out.println("Printing " + rowCount + " rows from table " + rsmd.getTableName(1));
+            StringJoiner sj = new StringJoiner(", ");
+            for (String name : tableNames) {
+                sj.add(name);
+            }
+
+            System.out.println("Printing " + rowCount + " rows from table(s) " + sj.toString());
 
             // Print out the formatted column labels
             System.out.print(strToPrint.toString());
@@ -574,8 +588,7 @@ public class DBTablePrinter {
 
             // Print out the rows
             for (int i = 0; i < rowCount; i++) {
-                for (int j = 0; j < columnCount; j++) {
-                    Column c = columns.get(j);
+                for (Column c : columns) {
 
                     // This should form a format string like: "%-60s"
                     format = String.format("| %%%s%ds ", c.getJustifyFlag(), c.getWidth());
