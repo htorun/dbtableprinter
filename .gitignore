@@ -1,0 +1,46 @@
+### Linux specific files and directories
+# temp files
+*~
+
+# KDE directory preferences
+.directory
+
+### Java specific files and directories
+# *.class # commented out because out/ is ignored below
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+### InteliJ IDEA files and directories
+.idea/
+*.iml
+
+# Compiler output directory
+out/
+
+# File-based project format:
+*.ipr
+*.iws
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+
+### Project specific files and directories
+doc/
+resources/net/efabrika/util/employees_db/
