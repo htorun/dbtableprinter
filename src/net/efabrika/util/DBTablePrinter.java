@@ -424,7 +424,7 @@ public class DBTablePrinter {
                 System.err.println("DBTablePrinter Error: Result Set is closed!");
                 return;
             }
-            if (maxStringColWidth < 5) {
+            if (maxStringColWidth < 1) {
                 System.err.println("DBTablePrinter Info: Invalid max. varchar column width. Using default!");
                 maxStringColWidth = DEFAULT_MAX_TEXT_COL_WIDTH;
             }
@@ -566,6 +566,7 @@ public class DBTablePrinter {
             }
 
             String lineSeparator = System.getProperty("line.separator");
+
             // Is this really necessary ??
             lineSeparator = lineSeparator == null ? "\n" : lineSeparator;
 
