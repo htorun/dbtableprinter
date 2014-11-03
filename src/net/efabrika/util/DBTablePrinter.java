@@ -2,7 +2,8 @@
 Database Table Printer
 Copyright (C) 2014  Hami Galip Torun
 
-Project Home: https://github.com/Htorun/DBTablePrinter
+Email: hamitorun@e-fabrika.net
+Project Home: https://github.com/htorun/dbtableprinter
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -24,6 +25,7 @@ useful. It is part of my effort to learn Java, how to use
 an IDE (IntelliJ IDEA 13.1.15 in this case), how to apply an
 open source license and how to use GitHub (https://github.com)
 for version control and publishing an open source software.
+
 Hami
  */
 
@@ -576,7 +578,7 @@ public class DBTablePrinter {
                     Column c = columns.get(j);
 
                     // This should form a format string like: "%-60s"
-                    format = String.format("%%%s%ds", c.getJustifyFlag(), c.getWidth());
+                    format = String.format("| %%%s%ds ", c.getJustifyFlag(), c.getWidth());
                     System.out.print(
                             String.format(format, c.getValue(i))
                     );
