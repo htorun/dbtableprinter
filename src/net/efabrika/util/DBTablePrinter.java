@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 This is my first Java program that does something more or less
 useful. It is part of my effort to learn Java, how to use
 an IDE (IntelliJ IDEA 13.1.15 in this case), how to apply an
-open source license and how to use GitHub (https://github.com)
+open source license and how to use Git and GitHub (https://github.com)
 for version control and publishing an open source software.
 
 Hami
@@ -72,7 +72,7 @@ public class DBTablePrinter {
 
     /**
      * Default maximum width for text columns
-     * (like a <code>VARCHAR</code> column.
+     * (like a <code>VARCHAR</code>) column.
      */
     private static final int DEFAULT_MAX_TEXT_COL_WIDTH = 150;
 
@@ -126,7 +126,8 @@ public class DBTablePrinter {
          * Generic SQL type of the column as defined in
          * <a target="_blank"
          * href="http://docs.oracle.com/javase/8/docs/api/java/sql/Types.html">
-         * java.sql.Types</a>.
+         * java.sql.Types
+         * </a>.
          */
         private int type;
 
@@ -134,7 +135,8 @@ public class DBTablePrinter {
          * Generic SQL type name of the column as defined in
          * <a target="_blank"
          * href="http://docs.oracle.com/javase/8/docs/api/java/sql/Types.html">
-         * java.sql.Types</a>.
+         * java.sql.Types
+         * </a>.
          */
         private String typeName;
 
@@ -169,7 +171,8 @@ public class DBTablePrinter {
          * generic SQL type and type name (as defined in
          * <a target="_blank"
          * href="http://docs.oracle.com/javase/8/docs/api/java/sql/Types.html">
-         * java.sql.Types</a>)
+         * java.sql.Types
+         * </a>)
          *
          * @param label Column label or name
          * @param type Generic SQL type
@@ -232,8 +235,8 @@ public class DBTablePrinter {
          * These values will come from each row of a
          * <a target="_blank"
          * href="http://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html">
-         * ResultSet</a>
-         * of a database query.
+         * ResultSet
+         * </a> of a database query.
          *
          * @param value The column value to add to {@link #values}
          */
@@ -260,10 +263,9 @@ public class DBTablePrinter {
          * Returns the value of the {@link #justifyFlag}. The column
          * values will be printed using <code>String.format</code> and
          * this flag will be used to right or left justify the text.
-         * See {@link #justifyLeft}
          *
-         * @return An empty <code>String</code> to justify right,
-         * "<code>-</code>" to justify left.
+         * @return The {@link #justifyFlag} of this column
+         * @see #justifyLeft()
          */
         public String getJustifyFlag() {
             return justifyFlag;
@@ -280,17 +282,16 @@ public class DBTablePrinter {
         }
 
         /**
-         * Returns the generic SQL type category ({@link #typeCategory})
-         * of the column
+         * Returns the generic SQL type category of the column
          *
-         * @return The type category of the column
+         * @return The {@link #typeCategory} of the column
          */
         public int getTypeCategory() {
             return typeCategory;
         }
 
         /**
-         * Sets the type category ({@link #typeCategory}) of the column
+         * Sets the {@link #typeCategory} of the column
          *
          * @param typeCategory The type category
          */
