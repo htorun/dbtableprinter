@@ -576,10 +576,9 @@ public class DBTablePrinter {
             strToPrint.insert(0, rowSeparator);
             strToPrint.append(rowSeparator);
 
+            // Using stream API and lambda expressions
             StringJoiner sj = new StringJoiner(", ");
-            for (String name : tableNames) {
-                sj.add(name);
-            }
+            tableNames.stream().forEach(name -> sj.add(name));
 
             System.out.println("Printing " + rowCount + " rows from table(s) " + sj.toString());
 
