@@ -69,7 +69,7 @@ Printing 3 rows from table(s) EMPLOYEES, SALARIES
 |  10001 | Georgi     | Facello   |  66074 |  1988-06-25 |  1989-06-25 |
 +--------+------------+-----------+--------+-------------+-------------+
 ```
-The souce code is heavily commented with Javadoc and inline comments mainly for me to learn how to use them and maybe for a remote possibility that someone finds it useful.
+The source code is heavily commented with Javadoc and inline comments mainly for me to learn how to use them and maybe for a remote possibility that someone finds it useful.
 
 By the way, I used Java 8 during development but I didn't use lambdas, streams etc. so JREs > 1.5 should work (not tested though). I am planning to learn and use those but maybe not for this simple project ;)
 
