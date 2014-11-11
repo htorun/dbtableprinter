@@ -581,7 +581,12 @@ public class DBTablePrinter {
                 sj.add(name);
             }
 
-            System.out.println("Printing " + rowCount + " rows from table(s) " + sj.toString());
+            String info = "Printing " + rowCount;
+            info += rowCount > 1 ? " rows from " : " row from ";
+            info += tableNames.size() > 1 ? "tables " : "table ";
+            info += sj.toString();
+
+            System.out.println(info);
 
             // Print out the formatted column labels
             System.out.print(strToPrint.toString());
