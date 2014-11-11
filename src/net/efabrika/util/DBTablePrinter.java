@@ -578,7 +578,7 @@ public class DBTablePrinter {
 
             // Using stream API and lambda expressions
             StringJoiner sj = new StringJoiner(", ");
-            tableNames.stream().forEach(name -> sj.add(name));
+            tableNames.stream().forEach(sj::add);
 
             String info = "Printing " + rowCount;
             info += rowCount > 1 ? " rows from " : " row from ";
