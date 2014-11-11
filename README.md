@@ -18,7 +18,7 @@ DBTablePrinter.printTable(conn, "employees");
 It should print something like this:
 
 ```
-Printing 10 rows from table(s) EMPLOYEES
+Printing 10 rows from table EMPLOYEES
 +--------+------------+------------+-----------+--------+-------------+
 | EMP_NO | BIRTH_DATE | FIRST_NAME | LAST_NAME | GENDER |  HIRE_DATE  |
 +--------+------------+------------+-----------+--------+-------------+
@@ -58,7 +58,7 @@ DBTablePrinter.printResultSet(rs);
 Should print:
 
 ```
-Printing 3 rows from table(s) EMPLOYEES, SALARIES
+Printing 3 rows from tables EMPLOYEES, SALARIES
 +--------+------------+-----------+--------+-------------+-------------+
 |   ID   | FIRST_NAME | LAST_NAME | SALARY |  FROM_DATE  |   TO_DATE   |
 +--------+------------+-----------+--------+-------------+-------------+
